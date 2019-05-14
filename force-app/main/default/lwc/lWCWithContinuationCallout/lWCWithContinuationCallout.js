@@ -4,25 +4,26 @@ export default class LWCWithContinuationCallout extends LightningElement {
     @track studentList;
     @track customerList;
     @track candidateList;
+    @track loaded = false;
+
 
     startRequest() {
+        this.loaded = true;
         startRequest()
         .then(result => {
-            // eslint-disable-next-line no-console
-            console.log('result --> '+result);
-            // eslint-disable-next-line vars-on-top
             var parsedVal = JSON.parse(result);
             
             this.studentList = parsedVal.studentWrapperList;
-            console.log('11-->  '+this.studentList);
+            console.log('studentList -->  '+JSON.stringify(this.studentList));
 
             
             this.candidateList = parsedVal.candidateWrapperList;
-            console.log('22-->  '+this.candidateList);
+            console.log('candidateList -->  '+JSON.stringify(this.candidateList));
 
             
             this.customerList = parsedVal.customerWrapperList;
-            console.log('33-->  '+this.customerList);
+            console.log('customerList -->  '+JSON.stringify(this.customerList));
+            this.loaded = false;
         })
         .catch(error => {
             this.error = error;
