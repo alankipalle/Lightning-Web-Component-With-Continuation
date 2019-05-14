@@ -17,11 +17,11 @@ export default class LWCWithContinuationCallout extends LightningElement {
             console.log('11-->  '+this.studentList);
 
             
-            this.candidateList = parsedVal.candidateList;
+            this.candidateList = parsedVal.candidateWrapperList;
             console.log('22-->  '+this.candidateList);
 
             
-            this.customerList = parsedVal.customerList;
+            this.customerList = parsedVal.customerWrapperList;
             console.log('33-->  '+this.customerList);
         })
         .catch(error => {
