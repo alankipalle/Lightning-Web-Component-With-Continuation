@@ -1,0 +1,63 @@
+<template>
+    <lightning-card title="Lightning Web Component With Continuation">
+     <center> <lightning-button variant="success" label="Make A Callout" title="Base action" onclick={startRequest}>
+           </lightning-button>
+        </center><br/><br/>
+        <div>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="Name">Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Email">Email</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="AccNumber">AccNumber</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Source">Source</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Site">Site</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template if:true={studentList}>
+                        <template for:each={studentList} for:item="row">
+                            <tr key={row}>
+                                <td>
+                                    <div class="slds-truncate" title={row.Name}>
+                                        {row.Name}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={row.Email}>
+                                        {row.Email}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={row.AccNumber}>
+                                        {row.AccNumber}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={row.Source}>
+                                        {row.Source}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={row.Site}>
+                                        {row.Site}
+                                    </div>
+                                </td>
+                            </tr>
+                        </template>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>
