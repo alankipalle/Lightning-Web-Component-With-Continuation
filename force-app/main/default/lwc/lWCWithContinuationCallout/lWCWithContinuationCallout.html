@@ -1,10 +1,14 @@
 <template>
     <lightning-card title="Lightning Web Component With Continuation">
         <center>
-            <lightning-button variant="success" label="Make A Callout" title="Base action" onclick={startRequest}>
+            <lightning-button variant="success" icon-name="utility:apex_plugin" label="Make A Callout"
+                title="Base action" onclick={startRequest}>
             </lightning-button>
         </center>
         <br /><br />
+        <template if:true={loaded}>
+            <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>
+        </template>
         <template if:true={studentList}>
             <lightning-card>
                 <center>
@@ -41,7 +45,7 @@
                                         {row.Name}
                                     </div>
                                 </td>
-                                
+
                                 <td>
                                     <div class="slds-truncate" title={row.Email}>
                                         {row.Email}
