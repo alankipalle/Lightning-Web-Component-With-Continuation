@@ -1,9 +1,2 @@
-# SFDX App
+# Lightning Web Component With Continuation
 
-## Dev, Build and Test
-
-## Resources
-
-## Description of Files and Directories
-
-## Issues
